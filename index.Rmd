@@ -15,17 +15,21 @@ I am interested in exploring data related to the estimated medical insurance cha
 
 How do personal attributes and geographic factors relate to medical insurance charges? I hypothesize that certain personal attributes, such as being a smoker, having a higher BMI, or having more dependents, will be associated with higher medical insurance charges. Additionally, I anticipate that regional differences might lead to variations in healthcare expenses due to diverse healthcare infrastructures and policies. I believe that these attributes and regional factors contribute to systematic patterns in insurance costs, reflecting the underlying behavioral and institutional dynamics within the healthcare system. The variable within my dataset consists of age, gender, bmi, children, smoker, and region. Age may affect health conditions and insurance as individuals get older. Gender as male or female, can view potential disparities and different requirements. BMI is a  numeric value derived from height and weight, indicating body fat and overall health. Higher BMI might be associated with increased health risks and consequently, higher insurance charges. Children include the number of dependents covered under an insurance policy. Smoker indicated with smoker (1) or not smoker (0) is a known indicator for potential health risk. This would potentially lead to higher health expenses. Region reflects the geographical differences in healthcare cost, accessibility, and policies . Charges would be my only outcome variable as it covers the medical charges incurred by all the dependent variables combined. Support for my hypothesis would be indicated by a significant positive relationship between smoking habits, higher bmi, alongside other dependents resulting in higher medical coverage in specific regions. 
 
+##Visualization
 ```{r}
-
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
-  geom_point() +
-  geom_smooth() +
-  labs(x = "Body Mass Index", y = "Insurance Expenses")
-
-fit_1 <- lm(charges ~ bmi + age, data = insurance)
+library(ggplot2)
 
 
+plot_1 <- ggplot(insurance, aes(x = bmi, y = charges)) +
+  geom_point() + geom_smooth() +
+  labs(x = "Body Mass Index", y = "Charges")
 
+plot_1
+
+fit_1
+
+
+  
 
 
 ```
