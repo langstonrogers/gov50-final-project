@@ -11,6 +11,22 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to the correlation of religion and identity to politics in america. Finding out if identity or how religious people are has an affect on voting parties and  thoughts on divided topics between parties. 
+I am interested in exploring data related to the estimated medical insurance charges based on age, gender, BMI, number of children, smoking habits, and region. This could involve regression analysis and might help insurance companies better estimate costs for policyholders.
 
-How much of an impact does identity and religion have in political polarization? I plan to study how much a person's identity or religious beliefs affect their entire political ideology. My hypothesis is that the average citizen allows their own identity to directly correspond with cultural and non-cultural polarization. Many of these ideas come without facts but within their own beliefs. Religion automatically correlates to the social values individuals may have but this study will find out how extensive polarization is on cultural issues. In the questionnaire, it asks people's views and their sympathy for other views. My data comes from a survey field in February 2020. My explanatory variables would be responses from people and what their identity corresponds to. The range of these parties and identities are identified by number. The outcome variables of these identities would dive into the cultural and non-cultural issues. These issues cover abortion, same-sex marriage, teaching Intelligent Design in public schools, displaying the Ten Commandments on government property, and anti-transgender bathroom bills. Non-cultural ideas that should involve more individual thought-out processes are welfare, healthcare, immigration, the environment, and the size of the military. Each issue is meausered by lower bound and upper bound under their respective titles. These bounds are separated between parties and religions. If I can observe a consistent pattern of perspective identities that directly have outcomes that match the presupposed ideas of that identity my hypothesis would be supported. If I observe patterns that are scattered or conflicting with the presupposed ideas my hypothesis would be disproven. 
+How do personal attributes and geographic factors relate to medical insurance charges? I hypothesize that certain personal attributes, such as being a smoker, having a higher BMI, or having more dependents, will be associated with higher medical insurance charges. Additionally, I anticipate that regional differences might lead to variations in healthcare expenses due to diverse healthcare infrastructures and policies. I believe that these attributes and regional factors contribute to systematic patterns in insurance costs, reflecting the underlying behavioral and institutional dynamics within the healthcare system. The variable within my dataset consists of age, gender, bmi, children, smoker, and region. Age may affect health conditions and insurance as individuals get older. Gender as male or female, can view potential disparities and different requirements. BMI is a  numeric value derived from height and weight, indicating body fat and overall health. Higher BMI might be associated with increased health risks and consequently, higher insurance charges. Children include the number of dependents covered under an insurance policy. Smoker indicated with smoker (1) or not smoker (0) is a known indicator for potential health risk. This would potentially lead to higher health expenses. Region reflects the geographical differences in healthcare cost, accessibility, and policies . Charges would be my only outcome variable as it covers the medical charges incurred by all the dependent variables combined. Support for my hypothesis would be indicated by a significant positive relationship between smoking habits, higher bmi, alongside other dependents resulting in higher medical coverage in specific regions. 
+
+```{r}
+
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point() +
+  geom_smooth() +
+  labs(x = "Body Mass Index", y = "Insurance Expenses")
+
+fit_1 <- lm(charges ~ bmi + age, data = insurance)
+
+
+
+
+
+```
+
