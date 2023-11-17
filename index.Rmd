@@ -17,7 +17,9 @@ How do personal attributes and geographic factors relate to medical insurance ch
 
 ##Visualization
 ```{r}
+library(tidyverse)
 library(ggplot2)
+insurance <- read_csv("insurance.csv")
 
 
 plot_1 <- ggplot(insurance, aes(x = bmi, y = charges)) +
@@ -26,7 +28,7 @@ plot_1 <- ggplot(insurance, aes(x = bmi, y = charges)) +
 
 plot_1
 
-fit_1
+
 
 
   
