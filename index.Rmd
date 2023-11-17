@@ -23,11 +23,11 @@ insurance <- read_csv("insurance.csv")
 
 
 plot_1 <- ggplot(insurance, aes(x = bmi, y = charges)) +
-  geom_point() + geom_smooth() +
+  geom_point() +
+  geom_smooth() +
   labs(x = "Body Mass Index", y = "Charges")
 
 plot_1
-
 
 
 
@@ -35,4 +35,16 @@ plot_1
 
 
 ```
+```{r}
+plot_2 <- ggplot(data = insurance,
+       mapping = aes(x = charges)) +
+  geom_histogram() +
+  geom_vline(aes(xintercept = mean(charges)),color = "indianred1") +
+  geom_vline(aes(xintercept = median(charges)),color = "steelblue1")
 
+plot_2
+
+
+```
+
+In the multiple regression model we see that each variable has a significant impact on the amount charges go up in insurance chargers. Each BMI unit increase results in 332 dollars. Each Age unit increase results in 240 dollars. Each child unit increase results in a steep 543 dollars. These huge amounts would lead one to believe healthcare companies are very strict in prices and every tiny variable has a huge factor. When we look at charges directly without variables involved we that the median and mean are surprisingly very close and relatively low number inconsideration to the higher 40000 to 60000 amounts we see. The majority of people are paying about 9000 to 13000 per year. 
